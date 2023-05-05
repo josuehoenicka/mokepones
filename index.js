@@ -1,42 +1,37 @@
-let player = 0;
-let pc = 0;
-let  = document.querySelector('p')
-
-function chooseItem() {
-    player = prompt('Elige: 1 para piedra, 2 para papel, 3 para tijera');
-    // PLAYER OPTIONS
-    if(player == 1){
-        console.log('Tú: ✊');
-    } else if(player == 2){
-        console.log('Tú: ✋');
-    }else if (player == 3){
-        console.log('Tú: ✌');
+function chooseOption(item) {
+    let resultado = ""
+    if(item == 1){
+        resultado = '✊';
+    } else if(item == 2){
+        resultado = '✋';
+    }else if (item == 3){
+        resultado = '✌'; 
     } else {
-        console.log('No elegiste nada');
+        resultado = '❔';
     }
-    // PC OPTIONS
-    pc = prompt('Elige: 1 para piedra, 2 para papel, 3 para tijera');
-    if(pc == 1){
-        console.log('PC: ✊');
-    } else if(pc == 2){
-        console.log('PC: ✋');
-    }else if (pc == 3){
-        console.log('PC: ✌');
-    } else {
-        console.log('No elegiste nada');
-    }
-    // FIGHT
-    if(pc == player){
-        console.log('EMPATE ➖')
-    } else if(player == 1 && pc == 3){
-        console.log('GANASTE ✅')
-    } else if(player == 2 && pc == 1){
-        console.log('GANASTE ✅')
-    } else if(player == 3 && pc == 2){
-        console.log('GANASTE ✅')
-    } else {
-        console.log('PERDISTE ❌')
-    }
+    return resultado;    
 }
 
-chooseItem();
+function numRamdon(min, max){
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+let player = 0;
+let pc = numRamdon(1,3);
+
+player = prompt('Elige: 1 para piedra, 2 para papel, 3 para tijera');
+
+alert("You: " + chooseOption(player));
+alert("PC: " + chooseOption(pc));
+
+if(pc == player){
+    console.log('TIE ➖');
+} else if((player == 1 && pc == 3) || (player == 2 && pc == 1) || (player == 3 && pc == 2)){
+    console.log('GANASTE ✅');
+} else {
+    console.log('PERDISTE ❌');
+}
+
+
+
+
