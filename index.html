@@ -10,17 +10,30 @@
     <h1>Rottwaimes</h1>
     <section id="choose-rottwaimer">
         <h2>Choose your rottwaimer</h2>
-        <p>SELECT</p>
+
+        <label for="hoenix">HOENIX</label>
+        <input type="radio" name="rottwaimers" id="hoenix"/>
+        <label for="chaina">SHARKIX</label>
+        <input type="radio" name="rottwaimers" id="chaina"/>
+        <label for="kaison">COLDIX</label>
+        <input type="radio" name="rottwaimers" id="kaison"/>
+        <button id="btn-rottwaimer">SELECT</button>
     </section>
     <section id="choose-attack">
         <h2>Choose your attack:</h2>
         <p>Your rottwaimer: <span>3</span> lives</p>
         <p>Rival rottwaimer: <span>3</span> lives</p>
         <p>
-            <button>Fire🔥</button>
-            <button>Water💧</button>
-            <button>Ice🧊</button>
+            <button id="btn-attack-fire">Fire🔥</button>
+            <button id="btn-attack-water">Water💧</button>
+            <button id="btn-attack-ice">Ice🧊</button>
         </p>
+    </section>
+    <section id="messages">
+        <p>YOU WIN 🎉</p>
+    </section>
+    <section id="reset">
+        <button id="btn-reset">Reset</button>
     </section>
 </body>
 <script src="index.js"></script>
